@@ -4,12 +4,12 @@ class GoogleService
     @location = location
   end
 
-  def coordinates
-    JSON.parse(response.body, symbolize_names: true)[:results][0][:geometry][:location].values
+  def info
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def response
-    conn.get("/maps/api/geocode/json?address=#{@location}&key=#{ENV['key']}")
+    conn.get("/maps/api/geocode/json?address=#{@location}&key=#{ENV['google_key']}")
   end
 
   def conn
