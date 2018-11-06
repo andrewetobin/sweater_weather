@@ -7,14 +7,6 @@ class ImageFinder
     @info = service.info
   end
 
-  def random
-    @info[:photos][:photo][rand(1..(@info[:photos][:perpage]-1))]
-  end
-
-  def build_url
-
-  end
-# @info[:photos][:photo][0]
   private
 
     def service

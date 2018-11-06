@@ -12,11 +12,9 @@ describe "GET '/api/v1/backgrounds?location=denver,co'" do
     image = JSON.parse(response.body, symbolize_names: true)
 
     return_json =
-    { image => "https://weather.com " }
+    {:url=>"https://farm5.staticflickr.com/4338/37030744091_9cc6bce67e_b.jpg"}
 
-    expect(image).to eq(return_json)
-
+    expect(image).to have_key(:url)
+    expect(image.values.first[-3..-1]).to eq("jpg")
   end
 end
-
-# [39.7392358, -104.990251]

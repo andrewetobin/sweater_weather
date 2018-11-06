@@ -10,7 +10,7 @@ class FlickrService
   end
 
   def response
-    conn.get("/services/rest/?method=flickr.photos.search&api_key=#{ENV['flickr_key']}&lat=#{@lat}&lon=#{@lon}&tags=park,building&format=json&nojsoncallback=1")
+    conn.get("/services/rest/?method=flickr.photos.search&api_key=#{ENV['flickr_key']}&lat=#{@lat}&lon=#{@lon}&tags=park,building&format=json&nojsoncallback=1&extras=url_l")
   end
 
   def conn
