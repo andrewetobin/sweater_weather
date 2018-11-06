@@ -1,5 +1,5 @@
 class ImageFinder
-  attr_reader :info
+  attr_reader :info, :lat, :lon
 
   def initialize(cord_finder)
     @lat = cord_finder.coordinates[0]
