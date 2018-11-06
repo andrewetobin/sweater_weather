@@ -1,5 +1,5 @@
 class CordFinder
-  attr_reader :coordinates, :formatted_address
+  attr_reader :coordinates, :formatted_address, :info
 
   def initialize(location)
     @location = location

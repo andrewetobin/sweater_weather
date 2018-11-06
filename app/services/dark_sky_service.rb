@@ -9,7 +9,7 @@ class DarkSkyService
   end
 
   def response
-    conn.get("/forecast/#{ENV['dark_sky_key']}/#{@coodinates}")
+    conn.get("/forecast/#{ENV['dark_sky_key']}/#{@coordinates}")
   end
 
   def conn
