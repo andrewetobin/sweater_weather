@@ -3,7 +3,9 @@ require 'rails_helper'
 describe "GET '/api/v1/backgrounds?location=denver,co'" do
   it 'can send background image' do
 
-    get "/api/v1/backgrounds?location=denver,co"
+    VCR.use_cassette("user gets background image") do
+      get "/api/v1/backgrounds?location=denver,co"
+    end
 
     expect(response).to be_successful
 
@@ -16,3 +18,5 @@ describe "GET '/api/v1/backgrounds?location=denver,co'" do
 
   end
 end
+
+# [39.7392358, -104.990251]
