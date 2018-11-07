@@ -6,15 +6,7 @@ class ForecastFinderSerializer < ActiveModel::Serializer
   end
 
   def currently
-    [{
-      "current_time" => Time.at(object.info[:currently][:time]),
-      "current_temperature" => object.info[:currently][:temperature].round,
-      "current_summary" => object.info[:currently][:summary],
-      "icon" => object.info[:currently][:icon],
-      "high" => object.info[:daily][:data][0][:temperatureHigh].round,
-      "low" => object.info[:daily][:data][0][:temperatureLow].round
-    }
-    ]
+    CurrentSerializer.new(object.info).attributes
   end
 
   def details
