@@ -10,17 +10,20 @@ class ForecastFinderSerializer < ActiveModel::Serializer
   end
 
   def details
-    [{
-      "current_summary" => object.info[:currently][:summary],
-      "icon" => object.info[:currently][:icon],
-      "today" => object.info[:daily][:data][0][:summary],
-      "tonight" => object.info[:daily][:data][1][:summary],
-      "feels_like" => object.info[:currently][:apparentTemperature].round,
-      "humidity" => ((object.info[:currently][:humidity])*100).to_s << " %",
-      "visibility" => object.info[:currently][:visibility].to_s << " mile(s)",
-      "UV Index" => object.info[:currently][:uvIndex]
-    }
-    ]
+    DetailsSerializer.new(object.info).attributes
+
+
+    # [{
+    #   "current_summary" => object.info[:currently][:summary],
+    #   "icon" => object.info[:currently][:icon],
+    #   "today" => object.info[:daily][:data][0][:summary],
+    #   "tonight" => object.info[:daily][:data][1][:summary],
+    #   "feels_like" => object.info[:currently][:apparentTemperature].round,
+    #   "humidity" => ((object.info[:currently][:humidity])*100).to_s << " %",
+    #   "visibility" => object.info[:currently][:visibility].to_s << " mile(s)",
+    #   "UV Index" => object.info[:currently][:uvIndex]
+    # }
+    # ]
   end
 
   def forecast
