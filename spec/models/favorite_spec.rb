@@ -1,5 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe Favorite, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Favorite, type: :model do
+  describe "relationships" do
+    it {should belong_to :city}
+    it {should belong_to :user}
+  end
 end
