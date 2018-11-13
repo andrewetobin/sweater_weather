@@ -20,6 +20,7 @@ describe "Users API" do
   scenario 'error if email already exists' do
     user = create(:user)
 
+
     user_data = {
       email: user.email,
       password: 'password',
