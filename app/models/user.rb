@@ -1,6 +1,8 @@
 require 'securerandom'
 
 class User < ApplicationRecord
+  has_many :favorites
+  has_many :cities, through: :favorites, dependent: :delete_all
   before_create :generate_api_key
 
   validates :email, uniqueness: true, presence: true
