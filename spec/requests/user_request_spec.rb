@@ -14,11 +14,12 @@ describe "Users API" do
 
       expect(response.status).to eq(200)
       expect(user_response).to have_key(:api_key)
-      expect(User.last.email).to eq('kat@email.com')
+      expect(User.last.email).to eq('jeffcoffin@email.com')
   end
 
-  xscenario 'error if email already exists' do
+  scenario 'error if email already exists' do
     user = create(:user)
+
     user_data = {
       email: user.email,
       password: 'password',
