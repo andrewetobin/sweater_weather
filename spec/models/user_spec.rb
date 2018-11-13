@@ -8,4 +8,8 @@ describe User do
     it { should validate_presence_of(:password_confirmation) }
     it { should validate_presence_of(:api_key) }
   end
+  describe 'relationships' do
+    it {should have_many :favorites}
+    it {should have_many :cities}
+  end
 end
