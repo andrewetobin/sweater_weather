@@ -2,13 +2,26 @@ class Api::V1::FavoritesController < ApplicationController
   before_action :find_user, :validate_user
 
   def create
-    user = User.find_by(api_key: favorite_params[:api_key])
     city_split = favorite_params[:location].split(",")
     city = City.create(name: city_split[0], state: city_split[1])
-    user.cities << city
-    favorite = Favorite.find_by(user_id: user.id)
+    @user.cities << city
+    favorite = Favorite.find_by(user_id: @user.id)
 
-    render json: favorite
+    render json: FavoriteSerializer.new(@user.favorites).serialized_json
+  end
+
+  def index
+    render json: FavoriteSerializer.new(@user.favorites).serialized_json
+  end
+
+  def destroy
+    city = City.find_by(name: params["location"].split(",").first)
+
+    if @user.cities.delete(city)
+      render json: FavoriteSerializer.new(@user.favorites).serialized_json
+    else
+      render json: {errors: "City not found"}, status: 401
+    end
   end
 
   private

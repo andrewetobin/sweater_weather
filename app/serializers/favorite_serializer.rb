@@ -1,12 +1,8 @@
 class FavoriteSerializer < ActiveModel::Serializer
-  attributes :favorites
+  include FastJsonapi::ObjectSerializer
 
-  def favorites
-    user = User.find(object.user_id)
-    user.favorites.map do |favorite|
-      city = City.find(favorite.city_id)
-      "#{city.name}, #{city.state}"
-    end
+  attribute :location do |object|
+    "#{object.city.name}, #{object.city.state}"
   end
 
 
