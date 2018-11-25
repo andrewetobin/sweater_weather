@@ -12,7 +12,7 @@ describe 'favoriting locations API' do
     expect(user_response).to have_key("favorites")
     expect(user_response["favorites"]).to eq(["Denver,  CO"])
   end
-  xit 'does not allow a user to favorite a location with an invalid api key' do
+  it 'does not allow a user to favorite a location with an invalid api key' do
     user = create(:user)
     post "/api/v1/favorites?location=Denver,+CO&api_key=NotARealApiKey"
     expect(response).to have_http_status(401)
