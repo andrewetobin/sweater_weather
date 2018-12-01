@@ -9,7 +9,12 @@ class GoogleService
   end
 
   def response
-    conn.get("/maps/api/geocode/json?address=#{@location}&key=#{ENV['google_key']}")
+    if @location.to_i == 0
+      conn.get("/maps/api/geocode/json?address=#{@location}&key=#{ENV['google_key']}")
+    else
+      conn.get("/maps/api/geocode/json?latlng=#{@location}&key=#{ENV['google_key']}")
+    end
+
   end
 
   def conn
