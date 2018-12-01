@@ -11,8 +11,12 @@ class CordFinder
   end
 
   def formatted_address
-    "#{@info[:results][0][:address_components][2][:long_name]}, #{@info[:results][0][:address_components][4][:short_name]}"
-    # @info[:results][0][:formatted_address]
+    if @info[:results][0][:formatted_address].split.length > 6
+      "#{@info[:results][0][:address_components][2][:long_name]}, #{@info[:results][0][:address_components][4][:short_name]}"
+    else
+      split = @info[:results][0][:formatted_address].split(",")
+      "#{split[0]},#{split[1]}"
+    end
   end
 
   private

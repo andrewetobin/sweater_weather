@@ -2,9 +2,6 @@ class ForecastFinderSerializer < ActiveModel::Serializer
   attributes :location, :currently, :details, :hourly, :forecast
 
   def location
-    # if object.formatted_address.split.length > 7
-    #
-    require "pry"; binding.pry
     object.formatted_address
   end
 
@@ -27,8 +24,4 @@ class ForecastFinderSerializer < ActiveModel::Serializer
       DailySerializer.new(day).attributes
     end
   end
-
-
-
-
 end
