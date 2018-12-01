@@ -24,8 +24,4 @@ class ForecastFinderSerializer < ActiveModel::Serializer
       DailySerializer.new(day).attributes
     end
   end
-
-
-
-
 end
