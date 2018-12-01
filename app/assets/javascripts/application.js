@@ -39,7 +39,6 @@ window.onload = function () {
        var URL = `http://localhost:3000/api/v1/forecast?lat=${lat}&long=${long}`;
 
 
-
        $.getJSON(URL, function(data) {
            updateDOM(data);
        });
