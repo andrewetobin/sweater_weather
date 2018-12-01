@@ -56,54 +56,71 @@ window.onload = function () {
   function updateDOM(data) {
     console.log(data);
     console.log("inside updateDOM");
+    var weatherImages = {
+      "clear-day": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Sun_icon.svg/252px-Sun_icon.svg.png",
+      "clear-night": "http://www.clker.com/cliparts/f/S/2/p/7/u/gold-matte-moon.svg",
+      "rain": "https://cdn3.iconfinder.com/data/icons/weather-16/256/Rainy_Day-512.png",
+      "snow": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Nuvola_weather_snow.svg/1000px-Nuvola_weather_snow.svg.png",
+      "sleet": "http://www.clker.com/cliparts/f/6/7/4/1206565674431593790Anonymous_simple_weather_symbols_10.svg.hi.png",
+      "wind": "http://www.haotu.net/up/4233/128/216-wind.png",
+      "fog": "http://www.iconninja.com/files/81/344/943/fog-cloud-hiding-the-sun-weather-interface-symbol-icon.svg",
+      "cloudy": "http://camera.thietbianninh.com/images/icon-2.png",
+      "partly-cloudy-day": "http://meteo.cw/images_www/weather_icons1/weather_icon_03.png",
+      "partly-cloudy-night": "http://icon-park.com/imagefiles/simple_weather_icons_cloudy_night.png",
+      "hail": "http://icons.iconarchive.com/icons/icons8/ios7/256/Weather-Hail-icon.png",
+      "thunderstorm": "http://findicons.com/files/icons/2613/android_weather_extended/480/thunderstorms.png",
+      "tornado": "http://hddfhm.com/images/clipart-of-a-tornado-11.png"
+    }
     var location = data.location;
     var currentTemp = data.currently.current_temperature;
     var todaysHigh = data.currently.high;
     var todaysLow = data.currently.low;
-    var currentTime = data.currently.current_time
-    var todayDesc = data.details.today
-    var tonightDesc = data.details.tonight
-    var feelsLike = data.details.feels_like
-    var humidity = data.details.humidity
-    var visibility = data.details.visibility
-    var visibility = data.details.visibility
-    var uv = data.details.UV_Index
-    var time1 = data.hourly[0].time
-    var time2 = data.hourly[1].time
-    var time3 = data.hourly[2].time
-    var time4 = data.hourly[3].time
-    var time5 = data.hourly[4].time
-    var time6 = data.hourly[5].time
-    var time7 = data.hourly[6].time
-    var time8 = data.hourly[7].time
-    var temp1 = data.hourly[0].temperature
-    var temp2 = data.hourly[1].temperature
-    var temp3 = data.hourly[2].temperature
-    var temp4 = data.hourly[3].temperature
-    var temp5 = data.hourly[4].temperature
-    var temp6 = data.hourly[5].temperature
-    var temp7 = data.hourly[6].temperature
-    var temp8 = data.hourly[7].temperature
-    var day1 = data.forecast[0].day
-    var day2 = data.forecast[1].day
-    var day3 = data.forecast[2].day
-    var day4 = data.forecast[3].day
-    var day5 = data.forecast[4].day
-    var icon1 = data.forecast[0].icon
-    var icon2 = data.forecast[1].icon
-    var icon3 = data.forecast[2].icon
-    var icon4 = data.forecast[3].icon
-    var icon5 = data.forecast[4].icon
-    var high1 = data.forecast[0].high
-    var high2 = data.forecast[1].high
-    var high3 = data.forecast[2].high
-    var high4 = data.forecast[3].high
-    var high5 = data.forecast[4].high
-    var low1 = data.forecast[0].low
-    var low2 = data.forecast[1].low
-    var low3 = data.forecast[2].low
-    var low4 = data.forecast[3].low
-    var low5 = data.forecast[4].low
+    var currentTime = data.currently.current_time;
+    var currentIcon = data.currently.icon
+    var todayDesc = data.details.today;
+    var tonightDesc = data.details.tonight;
+    var feelsLike = data.details.feels_like;
+    var humidity = data.details.humidity;
+    var visibility = data.details.visibility;
+    var visibility = data.details.visibility;
+    var uv = data.details.UV_Index;
+    var time1 = data.hourly[0].time;
+    var time2 = data.hourly[1].time;
+    var time3 = data.hourly[2].time;
+    var time4 = data.hourly[3].time;
+    var time5 = data.hourly[4].time;
+    var time6 = data.hourly[5].time;
+    var time7 = data.hourly[6].time;
+    var time8 = data.hourly[7].time;
+    var temp1 = data.hourly[0].temperature;
+    var temp2 = data.hourly[1].temperature;
+    var temp3 = data.hourly[2].temperature;
+    var temp4 = data.hourly[3].temperature;
+    var temp5 = data.hourly[4].temperature;
+    var temp6 = data.hourly[5].temperature;
+    var temp7 = data.hourly[6].temperature;
+    var temp8 = data.hourly[7].temperature;
+    var day1 = data.forecast[0].day;
+    var day2 = data.forecast[1].day;
+    var day3 = data.forecast[2].day;
+    var day4 = data.forecast[3].day;
+    var day5 = data.forecast[4].day;
+    var icon1 = data.forecast[0].icon;
+    var icon2 = data.forecast[1].icon;
+    var icon3 = data.forecast[2].icon;
+    var icon4 = data.forecast[3].icon;
+    var icon5 = data.forecast[4].icon;
+    var high1 = data.forecast[0].high;
+    var high2 = data.forecast[1].high;
+    var high3 = data.forecast[2].high;
+    var high4 = data.forecast[3].high;
+    var high5 = data.forecast[4].high;
+    var low1 = data.forecast[0].low;
+    var low2 = data.forecast[1].low;
+    var low3 = data.forecast[2].low;
+    var low4 = data.forecast[3].low;
+    var low5 = data.forecast[4].low;
+
 
     //   var desc = data.weather[0].description;
     //   var icon = data.weather[0].icon;
@@ -113,6 +130,7 @@ window.onload = function () {
       $('#todays-high-temp').html("High: " + todaysHigh);
       $('#todays-low-temp').html("Low: " + todaysLow);
       $('#current-time').html(currentTime)
+      $('#current-icon').attr('src', weatherImages[currentIcon])
       $('#today-desc').html("Today: " + todayDesc)
       $('#tonight-desc').html("Tonight: " + tonightDesc)
       $('#feels-like').html("Feels Like: " + feelsLike)

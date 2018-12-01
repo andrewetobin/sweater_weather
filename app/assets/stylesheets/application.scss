@@ -129,6 +129,10 @@
     padding: 10px 10px 10px 10px;
     text-align: center;
   }
+  img {
+  	width: 50px;
+  	filter: grayscale(30%);
+  }
 
  /* Remove extra left and right margins, due to padding in columns */
  .row {margin: 0 -5px;}
