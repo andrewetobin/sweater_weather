@@ -19,10 +19,12 @@
 
 
 window.onload = function () {
-  console.log('Hello')
+  console.log('Hello there')
   navigator.geolocation.getCurrentPosition(success, error);
 
   function success(pos) {
+    console.log('in success')
+
       var lat = pos.coords.latitude;
       var long = pos.coords.longitude;
       weather(lat, long);
@@ -31,7 +33,12 @@ window.onload = function () {
     console.log('There was an error');
   }
   function weather(lat, long) {
-       var URL = `https://fcc-weather-api.glitch.me/api/current?lat=${lat}&lon=${long}`;
+    console.log(lat);
+    console.log(long);
+
+       var URL = `http://localhost:3000/api/v1/forecast?lat=${lat}&long=${long}`;
+
+
 
        $.getJSON(URL, function(data) {
            updateDOM(data);
