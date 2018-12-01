@@ -76,7 +76,8 @@ window.onload = function () {
     var todaysHigh = data.currently.high;
     var todaysLow = data.currently.low;
     var currentTime = data.currently.current_time;
-    var currentIcon = data.currently.icon
+    var currentIcon = data.currently.icon;
+    var detailsIcon = data.details.icon;
     var todayDesc = data.details.today;
     var tonightDesc = data.details.tonight;
     var feelsLike = data.details.feels_like;
@@ -92,6 +93,14 @@ window.onload = function () {
     var time6 = data.hourly[5].time;
     var time7 = data.hourly[6].time;
     var time8 = data.hourly[7].time;
+    var hour_1_Icon = data.hourly[0].icon;
+    var hour_2_Icon = data.hourly[1].icon;
+    var hour_3_Icon = data.hourly[2].icon;
+    var hour_4_Icon = data.hourly[3].icon;
+    var hour_5_Icon = data.hourly[4].icon;
+    var hour_6_Icon = data.hourly[5].icon;
+    var hour_7_Icon = data.hourly[6].icon;
+    var hour_8_Icon = data.hourly[7].icon;
     var temp1 = data.hourly[0].temperature;
     var temp2 = data.hourly[1].temperature;
     var temp3 = data.hourly[2].temperature;
@@ -120,6 +129,11 @@ window.onload = function () {
     var low3 = data.forecast[2].low;
     var low4 = data.forecast[3].low;
     var low5 = data.forecast[4].low;
+    var day_1_Icon = data.forecast[0].icon;
+    var day_2_Icon = data.forecast[1].icon;
+    var day_3_Icon = data.forecast[2].icon;
+    var day_4_Icon = data.forecast[3].icon;
+    var day_5_Icon = data.forecast[4].icon;
 
 
     //   var desc = data.weather[0].description;
@@ -131,6 +145,7 @@ window.onload = function () {
       $('#todays-low-temp').html("Low: " + todaysLow);
       $('#current-time').html(currentTime)
       $('#current-icon').attr('src', weatherImages[currentIcon])
+      $('#details-icon').attr('src', weatherImages[detailsIcon])
       $('#today-desc').html("Today: " + todayDesc)
       $('#tonight-desc').html("Tonight: " + tonightDesc)
       $('#feels-like').html("Feels Like: " + feelsLike)
@@ -145,6 +160,14 @@ window.onload = function () {
       $('#time-6').html(time6)
       $('#time-7').html(time7)
       $('#time-8').html(time8)
+      $('#hour1-icon').attr('src', weatherImages[hour_1_Icon])
+      $('#hour2-icon').attr('src', weatherImages[hour_2_Icon])
+      $('#hour3-icon').attr('src', weatherImages[hour_3_Icon])
+      $('#hour4-icon').attr('src', weatherImages[hour_4_Icon])
+      $('#hour5-icon').attr('src', weatherImages[hour_5_Icon])
+      $('#hour6-icon').attr('src', weatherImages[hour_6_Icon])
+      $('#hour7-icon').attr('src', weatherImages[hour_7_Icon])
+      $('#hour8-icon').attr('src', weatherImages[hour_8_Icon])
       $('#temp-1').html(temp1)
       $('#temp-2').html(temp2)
       $('#temp-3').html(temp3)
@@ -168,6 +191,11 @@ window.onload = function () {
       $('#high-3').html("High: " + high3)
       $('#high-4').html("High: " + high4)
       $('#high-5').html("High: " + high5)
+      $('#day1-icon').attr('src', weatherImages[day_1_Icon])
+      $('#day2-icon').attr('src', weatherImages[day_2_Icon])
+      $('#day3-icon').attr('src', weatherImages[day_3_Icon])
+      $('#day4-icon').attr('src', weatherImages[day_4_Icon])
+      $('#day5-icon').attr('src', weatherImages[day_5_Icon])
 
 
     //   $('#desc').html(desc);
