@@ -123,6 +123,12 @@
     padding: 20px 50px 20px 50px;
     text-align: center;
   }
+  .column-4 {
+    float: left;
+    width: 25%;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+  }
 
  /* Remove extra left and right margins, due to padding in columns */
  .row {margin: 0 -5px;}
@@ -172,6 +178,7 @@
   .location {
     font-size: 1.5rem;
   }
+
 
  /* Responsive columns - one column layout (vertical) on small screens */
  @media screen and (max-width: 600px) {

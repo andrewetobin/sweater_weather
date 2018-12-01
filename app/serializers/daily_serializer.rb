@@ -11,11 +11,11 @@ class DailySerializer < ActiveModel::Serializer
   end
 
   def high
-    object[:temperatureHigh]
+    "#{object[:temperatureHigh].round}\xC2\xB0"
   end
 
   def low
-    object[:temperatureLow]
+    "#{object[:temperatureLow].round}\xC2\xB0"
   end
 
   def precip

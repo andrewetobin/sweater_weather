@@ -94,6 +94,16 @@ window.onload = function () {
     var icon3 = data.forecast[2].icon
     var icon4 = data.forecast[3].icon
     var icon5 = data.forecast[4].icon
+    var high1 = data.forecast[0].high
+    var high2 = data.forecast[1].high
+    var high3 = data.forecast[2].high
+    var high4 = data.forecast[3].high
+    var high5 = data.forecast[4].high
+    var low1 = data.forecast[0].low
+    var low2 = data.forecast[1].low
+    var low3 = data.forecast[2].low
+    var low4 = data.forecast[3].low
+    var low5 = data.forecast[4].low
 
     //   var desc = data.weather[0].description;
     //   var icon = data.weather[0].icon;
@@ -135,6 +145,11 @@ window.onload = function () {
       $('#icon-3').html(icon3)
       $('#icon-4').html(icon4)
       $('#icon-5').html(icon5)
+      $('#high-1').html("High: " + high1)
+      $('#high-2').html("High: " + high2)
+      $('#high-3').html("High: " + high3)
+      $('#high-4').html("High: " + high4)
+      $('#high-5').html("High: " + high5)
 
 
     //   $('#desc').html(desc);
