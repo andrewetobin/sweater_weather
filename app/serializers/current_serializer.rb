@@ -2,7 +2,8 @@ class CurrentSerializer < ActiveModel::Serializer
   attributes :current_time, :current_temperature, :current_summary, :icon, :high, :low
 
   def current_time
-    Time.at(object[:currently][:time])
+    time = Time.at(object[:currently][:time])
+    time.strftime("%B %e")
   end
 
   def current_temperature

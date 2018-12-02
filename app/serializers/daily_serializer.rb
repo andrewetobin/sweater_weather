@@ -2,7 +2,8 @@ class DailySerializer < ActiveModel::Serializer
   attributes :day, :icon, :high, :low, :precip
 
   def day
-    Time.at(object[:time])
+    time = Time.at(object[:time])
+    time.strftime("%A")
   end
 
   def icon
@@ -10,11 +11,11 @@ class DailySerializer < ActiveModel::Serializer
   end
 
   def high
-    object[:temperatureHigh]
+    "#{object[:temperatureHigh].round}\xC2\xB0"
   end
 
   def low
-    object[:temperatureLow]
+    "#{object[:temperatureLow].round}\xC2\xB0"
   end
 
   def precip

@@ -22,7 +22,7 @@ class DetailsSerializer < ActiveModel::Serializer
   end
 
   def humidity
-    ((object[:currently][:humidity])*100).to_s << " %"
+    ((object[:currently][:humidity]*100).round).to_s << "%"
   end
 
   def visibility

@@ -2,7 +2,8 @@ class HourlySerializer < ActiveModel::Serializer
   attributes :time, :icon, :temperature
 
   def time
-    Time.at(object[:time])
+    time = Time.at(object[:time])
+    time.strftime("%l %P")
   end
 
   def icon
@@ -10,7 +11,7 @@ class HourlySerializer < ActiveModel::Serializer
   end
 
   def temperature
-    object[:temperature]
+    object[:temperature].round
   end
 
 end

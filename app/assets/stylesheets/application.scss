@@ -120,9 +120,20 @@
   .column-8 {
     float: left;
     width: 10%;
-    padding: 20px 40px 20px 40px;
+    padding: 20px 50px 20px 50px;
     text-align: center;
   }
+  .column-4 {
+    float: left;
+    width: 25%;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+  }
+  img {
+  	width: 50px;
+  	filter: grayscale(50%);
+  }
+
 
  /* Remove extra left and right margins, due to padding in columns */
  .row {margin: 0 -5px;}
@@ -147,7 +158,7 @@
   .forecast-card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
     padding: 16px;
-    width: 90%;
+    width: 95%;
     text-align: center;
     background-color: #A594F9;
     color: white;
@@ -172,6 +183,7 @@
   .location {
     font-size: 1.5rem;
   }
+
 
  /* Responsive columns - one column layout (vertical) on small screens */
  @media screen and (max-width: 600px) {
