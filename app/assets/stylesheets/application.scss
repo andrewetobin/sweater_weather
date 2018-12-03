@@ -84,11 +84,14 @@
    padding: 17px 10px;
  }
 
- nav li:hover {
-   background: #CDC1FF;
-   color: white;
-   cursor: pointer;
- }
+  nav li:hover {
+    background: #CDC1FF;
+    color: white;
+    cursor: pointer;
+  }
+  .pointer {
+    cursor: pointer;
+  }
  /* body */
 
  * {
@@ -120,7 +123,7 @@
   .column-8 {
     float: left;
     width: 10%;
-    padding: 20px 50px 20px 50px;
+    padding: 20px 70px 20px 70px;
     text-align: center;
   }
   .column-4 {
@@ -132,6 +135,34 @@
   img {
   	width: 50px;
   	filter: grayscale(50%);
+  }
+  .button {
+   background-color: #929497;
+   color: #FFFFFF;
+   border-radius: 24px;
+   font-size: 16px;
+   font-weight: 300;
+   width: 50%;
+   margin: 10px;
+  }
+  .button:hover{
+   cursor: pointer;
+  }
+  .form {
+   display: flex;
+   justify-content: center;
+   margin: 10px;
+
+  }
+  .locationField {
+    width: 200px;
+    height: 30px;
+    // margin-bottom: .5em;
+    padding-left: 0.25em;
+    font-size: 1em;
+  }
+  .locationField::placeholder {
+    color: #E6E7E8;
   }
 
 
