@@ -27,8 +27,11 @@
         <div class="column-2">
           <br />
           <br />
-          <p>Change Location</p>
-          <p>Favorite</p>
+          <div class="form">
+            <input type="text" id="locationField" class="locationField" placeholder="Location">
+          </div>
+          <input class="button" type="submit" value="Change Location" id="locationSubmit" onclick="getWeather(); document.getElementById('locationField').value = ''">
+          <p class="pointer">Favorite</p>
         </div>
       </div>
    </div>
@@ -132,15 +135,14 @@
 
 
   <table class="table table-borderless">
-    <!-- <thead>
-    <tr>
-    <th scope="col">Day</th>
-    <th scope="col">Icon</th>
-    <th scope="col">Precip</th>
-    <th scope="col">High</th>
-    <th scope="col">Low</th>
-  </tr>
-</thead> -->
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
 <tbody>
   <tr>
     <th scope="row" id="day-1">Monday</th>

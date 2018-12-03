@@ -3,7 +3,7 @@ class HourlySerializer < ActiveModel::Serializer
 
   def time
     time = Time.at(object[:time])
-    time.strftime("%l %P")
+    time.strftime("%l%P")
   end
 
   def icon
