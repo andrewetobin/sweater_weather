@@ -33,7 +33,7 @@ window.onload = function () {
 
 function weather(lat, long) {
 
-  var url = `http://localhost:3000/api/v1/forecast?lat=${lat}&long=${long}`;
+  var url = `https://desolate-ocean-12145.herokuapp.com/api/v1/forecast?lat=${lat}&long=${long}`;
 
   fetch(url).then(function(response) {
   return response.json();
@@ -45,7 +45,7 @@ function weather(lat, long) {
 
 function getWeather() {
   var enteredLocation = (locationField.value);
-  var url = `http://localhost:3000/api/v1/forecast?location=${enteredLocation}`;
+  var url = `https://desolate-ocean-12145.herokuapp.com/api/v1/forecast?location=${enteredLocation}`;
 
  fetch(url).then(function(response) {
   return response.json();
